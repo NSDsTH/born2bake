@@ -1,0 +1,1 @@
+"โปรเจกต์ Flutter born2bake — ทำ Software Testing Report เสร็จแล้ว. Unit tests 31 tests pass, Widget tests 2 pass, Integration tests (Android) 4 pass. ยังเหลือ: (1) รัน integration tests บน Chrome สำหรับ R3, (2) อัปเดต SoftwareTestingReport.md ด้วย output จริง, (3) ใส่ GitHub URL ใน report"

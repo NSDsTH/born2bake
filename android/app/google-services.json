@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1016941726459",
+    "project_id": "borntobake-1998",
+    "storage_bucket": "borntobake-1998.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016941726459:android:9d4765c3702eed0ee9fe5e",
+        "android_client_info": {
+          "package_name": "com.example.born2bake"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9JBFb9uILqn6O49tl1_CjXgiczK4YPmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

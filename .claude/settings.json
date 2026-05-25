@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which google-chrome *)",
+      "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --version)",
+      "Bash(brew --version)",
+      "Bash(curl -s \"https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json\")",
+      "Bash(python3 -c ' *)",
+      "Bash(cp /tmp/chromedriver-mac-arm64/chromedriver /Users/burathat/Downloads/born2bake/chromedriver)",
+      "Bash(chmod +x /Users/burathat/Downloads/born2bake/chromedriver)",
+      "Bash(xattr -d com.apple.quarantine /Users/burathat/Downloads/born2bake/chromedriver)",
+      "Bash(/Users/burathat/Downloads/born2bake/chromedriver --version)"
+    ]
+  }
+}
