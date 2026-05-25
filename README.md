@@ -46,19 +46,72 @@ flutter clean
 ```
 
 ## 4. Testing Instructions
-This project includes automated tests to ensure software quality, fulfilling the Laboratory Test Report requirements.
 
-**Widget Tests (Isolated Component Tests)**
-To run the UI and logic tests without relying on an external network or database:
+This project contains **42 automated test cases** across 3 levels (Unit, Widget, Integration) covering requirements R1–R5.
+
+### 4.1 Unit Tests (32 tests) — No device required
+
+Tests business logic in `AuthProvider`, `CartProvider`, and `UserProvider` using manual mock/fake classes (no real Firebase needed).
+
+```bash
+# Run all unit tests
+flutter test test/unit/
+
+# Run a specific file
+flutter test test/unit/auth_provider_test.dart
+flutter test test/unit/cart_provider_test.dart
+flutter test test/unit/user_provider_test.dart
+```
+
+### 4.2 Widget Tests (2 tests) — No device required
+
+Tests UI component rendering of `CartScreen`.
+
 ```bash
 flutter test test/widget_test.dart
 ```
 
-**Integration Tests (End-to-End Tests)**
-To run the full flow tests (including Firebase Authentication and Firestore interactions), ensure you have an Android Emulator or iOS Simulator running, then execute:
+### 4.3 Run Unit + Widget Tests Together
+
 ```bash
-flutter test integration_test/app_test.dart
+flutter test test/
 ```
+
+Expected output: `+34: All tests passed!`
+
+### 4.4 Integration Tests — Android Emulator (4 tests)
+
+Requires a running Android Emulator. Tests E2E flows with real Firebase Auth and Firestore.
+
+```bash
+# List available devices
+flutter devices
+
+# Run integration tests (replace emulator-5554 with your device ID)
+flutter test integration_test/app_test.dart -d emulator-5554 --timeout 120s
+```
+
+Expected output: `+4: All tests passed!`
+
+### 4.5 Integration Tests — Web Chrome (4 tests)
+
+Requires [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/) matching your Chrome version, placed in the project root.
+
+```bash
+# Option A: Use the provided script (starts ChromeDriver automatically)
+./test_chrome.sh
+
+# Option B: Manual
+chromedriver --port=4444 &
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  -d chrome
+```
+
+Expected output: `All tests passed!`
+
+> **Note:** `flutter test integration_test/... -d chrome` is not supported by Flutter — `flutter drive` is required for web integration tests.
 
 ---
 
@@ -143,9 +196,11 @@ Security within the app is enforced through role-based access control implemente
 
 | Test Level | Total Cases | Passed | Failed | Blocked | Execution Time |  
 |---|---|---|---|---|---|  
-| Widget Tests | 2 | 2 | 0 | 0 | 00:00:01 |  
-| Integration Tests | 3 | 3 | 0 | 0 | 00:02:49 |  
-| **Total** | **5** | **5** | **0** | **0** | **00:02:50** |  
+| Unit Tests | 32 | 32 | 0 | 0 | ~00:00:02 |  
+| Widget Tests | 2 | 2 | 0 | 0 | ~00:00:01 |  
+| Integration Tests — Android | 4 | 4 | 0 | 0 | ~00:01:18 |  
+| Integration Tests — Chrome | 4 | 4 | 0 | 0 | ~00:06:01 |  
+| **Total** | **42** | **42** | **0** | **0** | **~00:07:22** |  
 
 ### 6.3 Detailed Test Results[cite: 1]
 

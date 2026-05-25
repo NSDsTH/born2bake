@@ -35,7 +35,7 @@ flutter test test/unit/
 flutter test test/widget_test.dart
 
 # Integration Tests — Android Emulator (R1, R2, R3)
-flutter test integration_test/app_test.dart -d emulator-5554
+flutter test integration_test/app_test.dart -d emulator-5554 --timeout 120s
 
 # Integration Tests — Web / Chrome (R3) ต้องรัน ChromeDriver ก่อน
 chromedriver --port=4444 &
@@ -300,12 +300,12 @@ $ flutter test test/ --reporter expanded
 
 ### B. ผล Terminal Output — Integration Tests (Android Emulator)
 ```
-$ flutter test integration_test/app_test.dart -d emulator-5554
-00:01 +1: TC-I01: Boot app and check Login Screen UI loads properly
-03:29 +2: TC-I02: Firebase Real Authentication Sign Up Flow
-05:10 +3: TC-I03: Firebase Real Authentication Login Flow
-05:25 +4: TC-I04: Multi-Screen Navigation — Login → Register → MainScreen → CartScreen
-03:29 +4: All tests passed!
+$ flutter test integration_test/app_test.dart -d emulator-5554 --timeout 120s
+00:22 +1: TC-I01: Boot app and check Login Screen UI loads properly
+00:38 +2: TC-I02: Firebase Real Authentication Sign Up Flow
+00:55 +3: TC-I03: Firebase Real Authentication Login Flow
+01:18 +4: TC-I04: Multi-Screen Navigation — Login → Register → MainScreen → CartScreen
+01:18 +4: All tests passed!
 ```
 
 ### C. ผล Terminal Output — Integration Tests (Web Chrome)
