@@ -3,7 +3,7 @@
 **โครงการ:** Born2Bake — Cross-Platform Mobile Application (Flutter + Firebase)
 **รายวิชา:** การทดสอบซอฟต์แวร์ (Software Testing)
 **ผู้จัดทำ:** Burathat Niamsomdee **รหัสนักศึกษา:** 68130702307
-**แหล่งเก็บรหัสต้นฉบับ:** [GitHub Repository URL]
+**แหล่งเก็บรหัสต้นฉบับ:** [https://github.com/NSDsTH/born2bake](https://github.com/NSDsTH/born2bake)
 
 ---
 
